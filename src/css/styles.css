@@ -181,3 +181,24 @@ input:focus {
   line-height: 2;
   letter-spacing: 0.04em;
 }
+
+.load-btn {
+  display: none;
+}
+
+.load-btn.active {
+  display: block;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  outline: none;
+  border: none;
+  margin: 0 auto;
+
+  background-color: #4e75ff;
+
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
