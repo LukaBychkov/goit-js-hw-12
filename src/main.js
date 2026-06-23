@@ -73,6 +73,7 @@ form.addEventListener('submit', async e => {
 
 button.addEventListener('click', async e => {
   page += 1;
+  hideLoadMoreButton();
   showLoader();
 
   try {
@@ -88,11 +89,12 @@ button.addEventListener('click', async e => {
 
     const totalPages = Math.ceil(data.totalHits / 15);
     if (page >= totalPages) {
-      hideLoadMoreButton();
       iziToast.info({
         message: "We're sorry, but you've reached the end of search results.",
         position: 'topRight',
       });
+    } else {
+      showLoadMoreButton();
     }
   } catch (error) {
     iziToast.error({
